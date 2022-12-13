@@ -6,7 +6,7 @@ def getScore(opponent, strategy):
 
     return(stratScores[strategy] + rel)
 
-inputFile = open("input/input_02.txt", "r")
+inputFile = open("advent-of-code-2022-inputs/input_02.txt", "r")
 inputDat = inputFile.readlines()
 inputFile.close()
 

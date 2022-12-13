@@ -1,4 +1,4 @@
-inputFileCrates = open("input/input_05_01.txt", "r")
+inputFileCrates = open("advent-of-code-2022-inputs/input_05_01.txt", "r")
 inputDatCrates = inputFileCrates.readlines()
 inputFileCrates.close()
 
@@ -11,7 +11,7 @@ for l in reversed(a):
     for ii in range(0, nCols):
         if(l[ii].strip()): crates[ii].append(l[ii])
 
-inputFileMoves = open("input/input_05_02.txt", "r")
+inputFileMoves = open("advent-of-code-2022-inputs/input_05_02.txt", "r")
 inputDatMoves = inputFileMoves.readlines()
 inputFileMoves.close()
 

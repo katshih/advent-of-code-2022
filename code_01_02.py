@@ -1,4 +1,4 @@
-inputFile = open("input/input_01.txt", "r")
+inputFile = open("advent-of-code-2022-inputs/input_01.txt", "r")
 inputDat = inputFile.readlines()
 inputFile.close()
 

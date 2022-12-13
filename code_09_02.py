@@ -31,7 +31,7 @@ class Tail():
         self.pos = self.pos + (np.linalg.norm(posDiff) > 1.5)*np.sign(posDiff)
         self.history.append(self.pos)
 
-inputFile = open("input/input_09.txt", "r")
+inputFile = open("advent-of-code-2022-inputs/input_09.txt", "r")
 inputDat = inputFile.readlines()
 inputFile.close()
 
