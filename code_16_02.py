@@ -56,11 +56,11 @@ startReward = 0
 # greedy algorithm to get a lower bound
 def greedy(timeRemainingH, timeRemainingE, currentReward, currentNodeH, currentNodeE, validNodes, currentRoute):
     while(timeRemainingH or timeRemainingE):
-        rewardsH = [(n, 
+        rewardsH = [(n,
                     tunnelGraph.nodes[n]["flow"]*(timeRemainingH - 1 - all_dists[currentNodeH][0][n]),
                     1 + all_dists[currentNodeH][0][n])
                     for n in validNodes]
-        rewardsE = [(n, 
+        rewardsE = [(n,
                     tunnelGraph.nodes[n]["flow"]*(timeRemainingE - 1 - all_dists[currentNodeE][0][n]),
                     1 + all_dists[currentNodeE][0][n])
                     for n in validNodes]
@@ -95,12 +95,12 @@ def upperBound(timeRemainingH, timeRemainingE, currentReward, currentNodeH, curr
 print("Greedy: " + str(bestReward) + ", " + str(bestRoute))
 print("Upper: " + str(upperBound(maxTime, maxTime, startReward, startNode, startNode, list(tunnelGraph.nodes))))
 nodeQueue = queue.LifoQueue()
-# queue stores branches as: (time remaining E, time remainin H, reward total, path, nodes remaining)
- 
+# queue stores branches as: (time remaining E, time remaining H, reward total, path, nodes remaining)
+
 [nodeQueue.put((maxTime - 1 - all_dists[startNode][0][node],
                 maxTime,
-                tunnelGraph.nodes[node]["flow"]*(maxTime - 1 - all_dists[startNode][0][node]), 
-                [startNode, node], 
+                tunnelGraph.nodes[node]["flow"]*(maxTime - 1 - all_dists[startNode][0][node]),
+                [startNode, node],
                 [startNode],
                 [n for n in list(tunnelGraph.nodes) if((n != node) & (n != startNode))]))
                 for node in tunnelGraph.nodes if (node != startNode)]
